@@ -1,4 +1,15 @@
-# STARTER-team02
+# team02-m23-10am-2
+
+```
+| Table                       | Team Member  | Github Id     |
+|-----------------------------|--------------|---------------|
+| `UCSBDiningCommonsMenuItem` | Alice        | alice33       |
+| `UCSBOrganization`          | Joshua       | jczhou02      |
+| `RecommendationRequest`     | Bob          | robertg       |
+| `MenuItemReview`            | Charlie      | gauchocharlie |
+| `HelpRequest`               | Danielle     | danielle      |
+| `Articles`                  | Eddie        | eddydp        |
+```
 
 Instructions: <https://ucsb-cs156.github.io/m23/lab/team02.html>
 
