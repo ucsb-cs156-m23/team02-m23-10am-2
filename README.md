@@ -3,7 +3,7 @@
 ```
 | Table                       | Team Member  | Github Id     |
 |-----------------------------|--------------|---------------|
-| `UCSBDiningCommonsMenuItem` | Alice        | alice33       |
+| `UCSBDiningCommonsMenuItem` | Rocky        | rockygao2020  |
 | `UCSBOrganization`          | Joshua       | jczhou02      |
 | `RecommendationRequest`     | Bob          | robertg       |
 | `MenuItemReview`            | Charlie      | gauchocharlie |
@@ -12,8 +12,6 @@
 ```
 
 Instructions: <https://ucsb-cs156.github.io/m23/lab/team02.html>
-
-TODO: change heading above to your repo name, e.g. `# team02-m23-9am-4`
 
 TODO: Add a link to the deployed Dokku app for your team here, e.g.
 
