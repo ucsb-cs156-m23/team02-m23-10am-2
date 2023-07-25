@@ -6,7 +6,7 @@
 | `UCSBDiningCommonsMenuItem` | Rocky        | rockygao2020  |
 | `UCSBOrganization`          | Joshua       | jczhou02      |
 | `RecommendationRequest`     | Bob          | robertg       |
-| `MenuItemReview`            | Charlie      | gauchocharlie |
+| `MenuItemReview`            | Cyrus        | cyrus895      |
 | `HelpRequest`               | Danielle     | danielle      |
 | `Articles`                  | Eddie        | eddydp        |
 ```
