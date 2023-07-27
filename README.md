@@ -5,10 +5,10 @@
 |-----------------------------|--------------|---------------|
 | `UCSBDiningCommonsMenuItem` | Rocky        | rockygao2020  |
 | `UCSBOrganization`          | Joshua       | jczhou02      |
-| `RecommendationRequest`     | Bob          | robertg       |
+| `RecommendationRequest`     | Kirill       | kirrarista    |
 | `MenuItemReview`            | Cyrus        | cyrus895      |
-| `HelpRequest`               | Danielle     | danielle      |
-| `Articles`                  | Eddie        | eddydp        |
+| `HelpRequest`               | (unassigned) |               |
+| `Articles`                  | (unassigned) |               |
 ```
 
 Instructions: <https://ucsb-cs156.github.io/m23/lab/team02.html>
