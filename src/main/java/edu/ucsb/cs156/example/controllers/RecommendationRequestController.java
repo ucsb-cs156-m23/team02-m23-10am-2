@@ -57,29 +57,36 @@ public class RecommendationRequestController extends ApiController {
     //     return ucsbDate;
     // }
 
-    // @Operation(summary= "Create a new date")
-    // @PreAuthorize("hasRole('ROLE_ADMIN')")
-    // @PostMapping("/post")
-    // public UCSBDate postUCSBDate(
-    //         @Parameter(name="quarterYYYYQ") @RequestParam String quarterYYYYQ,
-    //         @Parameter(name="name") @RequestParam String name,
-    //         @Parameter(name="localDateTime", description="date (in iso format, e.g. YYYY-mm-ddTHH:MM:SS; see https://en.wikipedia.org/wiki/ISO_8601)", example="2023-12-01T13:15") @RequestParam("localDateTime") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime localDateTime)
-    //         throws JsonProcessingException {
+    @Operation(summary= "Create a new recommendation request")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PostMapping("/post")
+    public RecommendationRequest postRecommendationRequest(
+            @Parameter(name="requesterEmail") @RequestParam String requesterEmail,
+            @Parameter(name="professorEmail") @RequestParam String professorEmail,
+            @Parameter(name="explanation") @RequestParam String explanation,
+            @Parameter(name="dateRequested", description="date (in iso format, e.g. YYYY-mm-ddTHH:MM:SS; see https://en.wikipedia.org/wiki/ISO_8601)", example="2023-12-01T13:15") @RequestParam("dateRequested") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dateRequested,
+            @Parameter(name="dateNeeded", description="date (in iso format, e.g. YYYY-mm-ddTHH:MM:SS; see https://en.wikipedia.org/wiki/ISO_8601)", example="2023-12-01T13:15") @RequestParam("dateNeeded") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dateNeeded,
+            @Parameter(name="done") @RequestParam Boolean done)
+            throws JsonProcessingException {
 
-    //     // For an explanation of @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-    //     // See: https://www.baeldung.com/spring-date-parameters
+        // For an explanation of @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+        // See: https://www.baeldung.com/spring-date-parameters
 
-    //     log.info("localDateTime={}", localDateTime);
+        log.info("dateRequested={}", dateRequested);
+        log.info("dateNeeded={}", dateNeeded);
 
-    //     UCSBDate ucsbDate = new UCSBDate();
-    //     ucsbDate.setQuarterYYYYQ(quarterYYYYQ);
-    //     ucsbDate.setName(name);
-    //     ucsbDate.setLocalDateTime(localDateTime);
+        RecommendationRequest recommendationRequest = new RecommendationRequest();
+        recommendationRequest.setRequesterEmail(requesterEmail);
+        recommendationRequest.setProfessorEmail(professorEmail);
+        recommendationRequest.setExplanation(explanation);
+        recommendationRequest.setDateRequested(dateRequested);
+        recommendationRequest.setDateNeeded(dateNeeded);
+        recommendationRequest.setDone(done);
 
-    //     UCSBDate savedUcsbDate = ucsbDateRepository.save(ucsbDate);
+        RecommendationRequest savedRecommendationRequest = recommendationRequestRepository.save(recommendationRequest);
 
-    //     return savedUcsbDate;
-    // }
+        return savedRecommendationRequest;
+    }
 
     // @Operation(summary= "Delete a UCSBDate")
     // @PreAuthorize("hasRole('ROLE_ADMIN')")
