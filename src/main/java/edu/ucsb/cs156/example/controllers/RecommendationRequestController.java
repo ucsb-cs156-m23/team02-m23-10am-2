@@ -29,7 +29,7 @@ import javax.validation.Valid;
 
 import java.time.LocalDateTime;
 
-@Tag(name = "recrequests")
+@Tag(name = "RecommendationRequest")
 @RequestMapping("/api/RecommendationRequest")
 @RestController
 @Slf4j
