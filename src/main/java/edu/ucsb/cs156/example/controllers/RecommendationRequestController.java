@@ -30,7 +30,7 @@ import javax.validation.Valid;
 import java.time.LocalDateTime;
 
 @Tag(name = "recrequests")
-@RequestMapping("/api/recrequests")
+@RequestMapping("/api/RecommendationRequest")
 @RestController
 @Slf4j
 public class RecommendationRequestController extends ApiController {
