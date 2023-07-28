@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-m23/team02-m23-10am-2
 owner: ucsb-cs156-m23
 repo_name: team02-m23-10am-2
-pull_requests: [{"author":{"id":"U_kgDOBh3zbg","is_bot":false,"login":"jczhou02","name":"Joshua Zhou"},"headRefName":"Josh-OrgTable","number":40,"title":"JZ - added UCSBOrganization entity and repository files +  compiles/runs successfully","url":"https://github.com/ucsb-cs156-m23/team02-m23-10am-2/pull/40"},{"author":{"id":"MDQ6VXNlcjc3NzExNDA2","is_bot":false,"login":"kirrarista","name":"Kirill Aristarkhov"},"headRefName":"Kirill-RecRequest","number":39,"title":"ka - database setup (issue 16)","url":"https://github.com/ucsb-cs156-m23/team02-m23-10am-2/pull/39"}]
+pull_requests: []
