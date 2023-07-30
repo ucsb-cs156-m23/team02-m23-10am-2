@@ -100,7 +100,7 @@ public class RecommendationRequestControllerTests extends ControllerTestCase {
                                 .done(false)
                                 .build();
 
-                when(recommendationRequestRepository.findById(eq(7L))).thenReturn(Optional.of(recommendationRequest1));
+                when(recommendationRequestRepository.findById(eq(123L))).thenReturn(Optional.of(recommendationRequest1));
 
                 // act
                 MvcResult response = mockMvc.perform(get("/api/RecommendationRequest?id=123"))
@@ -108,7 +108,7 @@ public class RecommendationRequestControllerTests extends ControllerTestCase {
 
                 // assert
 
-                verify(recommendationRequestRepository, times(1)).findById(eq(7L));
+                verify(recommendationRequestRepository, times(1)).findById(eq(123L));
                 String expectedJson = mapper.writeValueAsString(recommendationRequest1);
                 String responseString = response.getResponse().getContentAsString();
                 assertEquals(expectedJson, responseString);
@@ -120,7 +120,7 @@ public class RecommendationRequestControllerTests extends ControllerTestCase {
 
                 // arrange
 
-                when(recommendationRequestRepository.findById(eq(7L))).thenReturn(Optional.empty());
+                when(recommendationRequestRepository.findById(eq(123L))).thenReturn(Optional.empty());
 
                 // act
                 MvcResult response = mockMvc.perform(get("/api/RecommendationRequest?id=123"))
@@ -128,10 +128,10 @@ public class RecommendationRequestControllerTests extends ControllerTestCase {
 
                 // assert
 
-                verify(recommendationRequestRepository, times(1)).findById(eq(7L));
+                verify(recommendationRequestRepository, times(1)).findById(eq(123L));
                 Map<String, Object> json = responseToJson(response);
                 assertEquals("EntityNotFoundException", json.get("type"));
-                assertEquals("id 123 not found", json.get("message"));
+                assertEquals("RecommendationRequest with id 123 not found", json.get("message"));
         }
 
         @WithMockUser(roles = { "USER" })

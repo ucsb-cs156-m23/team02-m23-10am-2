@@ -46,7 +46,7 @@ public class RecommendationRequestController extends ApiController {
         return requests;
     }
 
-    @Operation(summary= "Get a recommendation request")
+    @Operation(summary= "Get a single recommendation request")
     @PreAuthorize("hasRole('ROLE_USER')")
     @GetMapping("")
     public RecommendationRequest getById(
