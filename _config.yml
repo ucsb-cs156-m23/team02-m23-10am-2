@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-m23/team02-m23-10am-2
 owner: ucsb-cs156-m23
 repo_name: team02-m23-10am-2
-pull_requests: [{"author":{"id":"MDQ6VXNlcjc3NzExNDA2","is_bot":false,"login":"kirrarista","name":"Kirill Aristarkhov"},"headRefName":"Kirill-RecRequestController-Copy","number":41,"title":"Kirill RecRequestController with /all and /post","url":"https://github.com/ucsb-cs156-m23/team02-m23-10am-2/pull/41"}]
+pull_requests: []
