@@ -80,4 +80,31 @@ public class UCSBOrganizationControllerTests extends ControllerTestCase{
                 .andExpect(status().is(403)); // only admins can post
     }
 
-}
+    @WithMockUser(roles = { "ADMIN", "USER" })
+    @Test
+    public void an_admin_user_can_post_a_new_org() throws Exception {
+        // arrange
+
+        UCSBOrganization sky = UCSBOrganization.builder()        
+                .orgCode("SKY")
+                .orgTranslationShort("SKYDIVING CLUB")
+                .orgTranslation("SKYDIVING CLUB AT UCSB")
+                .inactive(false)
+                .build();
+
+
+        when(ucsbOrganizationRepository.save(eq(sky))).thenReturn(sky);
+
+        // act
+        MvcResult response = mockMvc.perform(
+                        post("/api/UCSBOrganization/post?orgCode=SKY&orgTranslationShort=SKYDIVING CLUB&orgTranslation=SKYDIVING CLUB AT UCSB&inactive=false")
+                                .with(csrf()))
+                .andExpect(status().isOk()).andReturn();
+
+        // assert
+        verify(ucsbOrganizationRepository, times(1)).save(sky);
+        String expectedJson = mapper.writeValueAsString(sky);
+        String responseString = response.getResponse().getContentAsString();
+        assertEquals(expectedJson, responseString);
+    }
+}   

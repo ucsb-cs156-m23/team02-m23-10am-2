@@ -46,13 +46,13 @@ public class UCSBOrganizationController extends ApiController {
     @PostMapping("/post")
     public UCSBOrganization postOrg(
         @Parameter(name="orgCode") @RequestParam String orgCode,
-            @Parameter(name="orgTranslationShort") @RequestParam String orgTranslationShort,
-            @Parameter(name="orgTranslation") @RequestParam String orgTranslation,
-            @Parameter(name="inactive") @RequestParam boolean inactive)
-            throws JsonProcessingException
-            {
+        @Parameter(name="orgTranslationShort") @RequestParam String orgTranslationShort,
+        @Parameter(name="orgTranslation") @RequestParam String orgTranslation,
+        @Parameter(name="inactive") @RequestParam boolean inactive
+        )
+        throws JsonProcessingException {
 
-        log.info("Detail: orgCode={}, orgTranslationShort={}, orgTranslation={}, inactive={}", orgCode, orgTranslationShort, orgTranslation, inactive);
+        //log.info("Detail: orgCode={}, orgTranslationShort={}, orgTranslation={}, inactive={}", orgCode, orgTranslationShort, orgTranslation, inactive);
 
         UCSBOrganization ucsborg = new UCSBOrganization();
         ucsborg.setOrgCode(orgCode);
