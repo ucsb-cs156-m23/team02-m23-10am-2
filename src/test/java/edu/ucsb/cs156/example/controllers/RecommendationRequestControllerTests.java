@@ -215,54 +215,60 @@ public class RecommendationRequestControllerTests extends ControllerTestCase {
                 assertEquals(expectedJson, responseString);
         }
 
-        // @WithMockUser(roles = { "ADMIN", "USER" })
-        // @Test
-        // public void admin_can_delete_a_date() throws Exception {
-        //         // arrange
+        @WithMockUser(roles = { "ADMIN", "USER" })
+        @Test
+        public void admin_can_delete_a_date() throws Exception {
+                // arrange
 
-        //         LocalDateTime ldt1 = LocalDateTime.parse("2022-01-03T00:00:00");
+                LocalDateTime dateRequested1 = LocalDateTime.parse("2022-02-04T01:01:01");
+                LocalDateTime dateNeeded1 = LocalDateTime.parse("2022-03-05T11:59:59");
 
-        //         UCSBDate ucsbDate1 = UCSBDate.builder()
-        //                         .name("firstDayOfClasses")
-        //                         .quarterYYYYQ("20222")
-        //                         .localDateTime(ldt1)
-        //                         .build();
 
-        //         when(ucsbDateRepository.findById(eq(15L))).thenReturn(Optional.of(ucsbDate1));
 
-        //         // act
-        //         MvcResult response = mockMvc.perform(
-        //                         delete("/api/ucsbdates?id=15")
-        //                                         .with(csrf()))
-        //                         .andExpect(status().isOk()).andReturn();
+                RecommendationRequest recommendationRequest1 = RecommendationRequest.builder()
+                                .requesterEmail("me@gmail.com")
+                                .professorEmail("jacoco@compile.please")
+                                .explanation("no_spaces_no_caps_you_like_it_huh")
+                                .dateRequested(dateRequested1)
+                                .dateNeeded(dateNeeded1)
+                                .done(true)
+                                .build();
 
-        //         // assert
-        //         verify(ucsbDateRepository, times(1)).findById(15L);
-        //         verify(ucsbDateRepository, times(1)).delete(any());
+                when(recommendationRequestRepository.findById(eq(123L))).thenReturn(Optional.of(recommendationRequest1));
 
-        //         Map<String, Object> json = responseToJson(response);
-        //         assertEquals("UCSBDate with id 15 deleted", json.get("message"));
-        // }
+                // act
+                MvcResult response = mockMvc.perform(
+                                delete("/api/RecommendationRequest?id=123")
+                                                .with(csrf()))
+                                .andExpect(status().isOk()).andReturn();
 
-        // @WithMockUser(roles = { "ADMIN", "USER" })
-        // @Test
-        // public void admin_tries_to_delete_non_existant_ucsbdate_and_gets_right_error_message()
-        //                 throws Exception {
-        //         // arrange
+                // assert
+                verify(recommendationRequestRepository, times(1)).findById(123L);
+                verify(recommendationRequestRepository, times(1)).delete(any());
 
-        //         when(ucsbDateRepository.findById(eq(15L))).thenReturn(Optional.empty());
+                Map<String, Object> json = responseToJson(response);
+                assertEquals("RecommendationRequest with id 123 deleted", json.get("message"));
+        }
 
-        //         // act
-        //         MvcResult response = mockMvc.perform(
-        //                         delete("/api/ucsbdates?id=15")
-        //                                         .with(csrf()))
-        //                         .andExpect(status().isNotFound()).andReturn();
+        @WithMockUser(roles = { "ADMIN", "USER" })
+        @Test
+        public void admin_tries_to_delete_non_existant_ucsbdate_and_gets_right_error_message()
+                        throws Exception {
+                // arrange
 
-        //         // assert
-        //         verify(ucsbDateRepository, times(1)).findById(15L);
-        //         Map<String, Object> json = responseToJson(response);
-        //         assertEquals("UCSBDate with id 15 not found", json.get("message"));
-        // }
+                when(recommendationRequestRepository.findById(eq(123L))).thenReturn(Optional.empty());
+
+                // act
+                MvcResult response = mockMvc.perform(
+                                delete("/api/RecommendationRequest?id=123")
+                                                .with(csrf()))
+                                .andExpect(status().isNotFound()).andReturn();
+
+                // assert
+                verify(recommendationRequestRepository, times(1)).findById(123L);
+                Map<String, Object> json = responseToJson(response);
+                assertEquals("RecommendationRequest with id 123 not found", json.get("message"));
+        }
 
         // @WithMockUser(roles = { "ADMIN", "USER" })
         // @Test
