@@ -40,7 +40,6 @@ import javax.validation.Valid;
 <span class="fc" id="L40">        return orgs;</span>
     }
 
-
     @Operation(summary= &quot;Create a new UCSB organization&quot;)
     @PreAuthorize(&quot;hasRole('ROLE_ADMIN')&quot;)
     @PostMapping(&quot;/post&quot;)
@@ -52,20 +51,29 @@ import javax.validation.Valid;
         )
         throws JsonProcessingException {
 
-<span class="fc" id="L55">        log.info(&quot;Detail: orgCode={}, orgTranslationShort={}, orgTranslation={}, inactive={}&quot;, orgCode, orgTranslationShort, orgTranslation, inactive);</span>
+<span class="fc" id="L54">        log.info(&quot;Detail: orgCode={}, orgTranslationShort={}, orgTranslation={}, inactive={}&quot;, orgCode, orgTranslationShort, orgTranslation, inactive);</span>
 
-<span class="fc" id="L57">        UCSBOrganization ucsborg = new UCSBOrganization();</span>
-<span class="fc" id="L58">        ucsborg.setOrgCode(orgCode);</span>
-<span class="fc" id="L59">        ucsborg.setOrgTranslationShort(orgTranslationShort);</span>
-<span class="fc" id="L60">        ucsborg.setOrgTranslation(orgTranslation);</span>
-<span class="fc" id="L61">        ucsborg.setInactive(inactive);</span>
+<span class="fc" id="L56">        UCSBOrganization ucsborg = new UCSBOrganization();</span>
+<span class="fc" id="L57">        ucsborg.setOrgCode(orgCode);</span>
+<span class="fc" id="L58">        ucsborg.setOrgTranslationShort(orgTranslationShort);</span>
+<span class="fc" id="L59">        ucsborg.setOrgTranslation(orgTranslation);</span>
+<span class="fc" id="L60">        ucsborg.setInactive(inactive);</span>
 
-<span class="fc" id="L63">        UCSBOrganization savedOrg = ucsbOrganizationRepository.save(ucsborg);</span>
+<span class="fc" id="L62">        UCSBOrganization savedOrg = ucsbOrganizationRepository.save(ucsborg);</span>
 
-<span class="fc" id="L65">        return savedOrg;</span>
+<span class="fc" id="L64">        return savedOrg;</span>
     }
 
+    @Operation(summary= &quot;Get UCSB organization by ID&quot;)
+    @PreAuthorize(&quot;hasRole('ROLE_USER')&quot;)
+    @GetMapping(&quot;&quot;)
+    public UCSBOrganization getById(
+            @Parameter(name=&quot;orgCode&quot;) @RequestParam String orgCode) {
+<span class="fc" id="L72">        UCSBOrganization org = ucsbOrganizationRepository.findById(orgCode)</span>
+<span class="fc" id="L73">                .orElseThrow(() -&gt; new EntityNotFoundException(UCSBOrganization.class, orgCode));</span>
 
+<span class="fc" id="L75">        return org;</span>
+    }
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
