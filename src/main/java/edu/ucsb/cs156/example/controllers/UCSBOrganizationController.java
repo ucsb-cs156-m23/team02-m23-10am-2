@@ -52,7 +52,7 @@ public class UCSBOrganizationController extends ApiController {
         )
         throws JsonProcessingException {
 
-        //log.info("Detail: orgCode={}, orgTranslationShort={}, orgTranslation={}, inactive={}", orgCode, orgTranslationShort, orgTranslation, inactive);
+        log.info("Detail: orgCode={}, orgTranslationShort={}, orgTranslation={}, inactive={}", orgCode, orgTranslationShort, orgTranslation, inactive);
 
         UCSBOrganization ucsborg = new UCSBOrganization();
         ucsborg.setOrgCode(orgCode);
