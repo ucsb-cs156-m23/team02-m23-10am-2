@@ -73,31 +73,7 @@ public class UCSBDiningCommonsMenuItemControllerTests extends ControllerTestCase
                 .andExpect(status().is(403));
         }
 
-        /*@Test
-        public void logged_out_users_cannot_put() throws Exception {
-            mockMvc.perform(put("/api/UCSBDiningCommonsMenuItem"))
-                .andExpect(status().is(403));
-        }
-
-        @Test
-        public void logged_out_users_cannot_delete() throws Exception {
-            mockMvc.perform(delete("/api/UCSBDiningCommonsMenuItem"))
-                .andExpect(status().is(403));
-        }
-
-        @WithMockUser(roles = {"USER"})
-        @Test
-        public void logged_in_regular_users_cannot_delete() throws Exception {
-            mockMvc.perform(delete("/api/UCSBDiningCommonsMenuItem"))
-                .andExpect(status().is(403));
-        } 
-
-        @WithMockUser(roles = {"USER"})
-        @Test
-        public void logged_in_regular_users_cannot_put() throws Exception {
-            mockMvc.perform(put("/api/UCSBDiningCommonsMenuItem"))
-                .andExpect(status().is(403));
-        } */
+        
 
         @WithMockUser(roles = {"USER"})
         @Test
