@@ -13,8 +13,6 @@
 
 Instructions: <https://ucsb-cs156.github.io/m23/lab/team02.html>
 
-TODO: Add a link to the deployed Dokku app for your team here, e.g.
-
 Deployments:
 
 * Prod: <https://team02.dokku-05.cs.ucsb.edu>
