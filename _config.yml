@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-m23/team02-m23-10am-2
 owner: ucsb-cs156-m23
 repo_name: team02-m23-10am-2
-pull_requests: [{"author":{"id":"MDQ6VXNlcjc3NzExNDA2","is_bot":false,"login":"kirrarista","name":"Kirill Aristarkhov"},"headRefName":"Kirill-CyrusReupload","number":50,"title":"ka - reupload of Cyrus' work (for some reason it passes on my machine)","url":"https://github.com/ucsb-cs156-m23/team02-m23-10am-2/pull/50"},{"author":{"id":"MDQ6VXNlcjc3NzEwNjU5","is_bot":false,"login":"cyrus895","name":""},"headRefName":"Cyrus-MenuItemReview","number":47,"title":"cc - completed methods for menuitemreview with tests (full)","url":"https://github.com/ucsb-cs156-m23/team02-m23-10am-2/pull/47"}]
+pull_requests: [{"author":{"id":"MDQ6VXNlcjc3NzEwNjU5","is_bot":false,"login":"cyrus895","name":""},"headRefName":"Cyrus-MenuItemReview","number":47,"title":"cc - completed methods for menuitemreview with tests (full)","url":"https://github.com/ucsb-cs156-m23/team02-m23-10am-2/pull/47"}]
