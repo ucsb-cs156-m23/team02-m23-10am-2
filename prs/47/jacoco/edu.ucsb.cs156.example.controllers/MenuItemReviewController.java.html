@@ -62,7 +62,7 @@ import java.time.LocalDateTime;
         @Parameter(name=&quot;itemId&quot;) @RequestParam Long itemId,
         @Parameter(name=&quot;reviewerEmail&quot;) @RequestParam String reviewerEmail,
         @Parameter(name=&quot;stars&quot;) @RequestParam int stars,
-        @Parameter(name=&quot;dateReviewed&quot;) @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dateReviewed,
+        @Parameter(name=&quot;dateReviewed&quot;, description=&quot;date (in iso format, e.g. YYYY-mm-ddTHH:MM:SS; see https://en.wikipedia.org/wiki/ISO_8601)&quot;, example=&quot;2023-12-01T13:15&quot;) @RequestParam(&quot;dateReviewed&quot;) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dateReviewed,
         @Parameter(name=&quot;comments&quot;) @RequestParam String comments
     ) throws JsonProcessingException {
 <span class="fc" id="L68">        log.info(&quot;localDateTime={}&quot;, dateReviewed);</span>
